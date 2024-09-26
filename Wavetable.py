@@ -17,7 +17,7 @@ print(f'These are the wavetable time divisions: {wavetable}')
 wave_discreet = np.sin(2 * np.pi * frequency* wavetable)
 
 #scake the sine wave
-wave_discreet_scaled = wave_discreet * 127
+wave_discreet_scaled = wave_discreet * 65536
 
 #convert to integer values
 wave_discreet_int = np.round(wave_discreet_scaled).astype(int)
@@ -30,7 +30,7 @@ plot.plot(wavetable, wave_discreet_int) # used to show points
 plot.title('Sine Wave Plot') #self explanatory
 plot.xlabel('Seconds') # self explanatory
 plot.ylabel('Amplitude') #self explanatory
-plot.ylim(-130, 130) # axis limits
+plot.ylim(-67000, 67000) # axis limits
 plot.axhline(0, color="black", linewidth=0.5, linestyle="--")
 plot.grid(True) # shows a grid
 plot.show() # displays the plot
